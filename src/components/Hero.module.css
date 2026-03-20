@@ -1,0 +1,164 @@
+.Hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 56px 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+.Grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(221, 254, 248, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(221, 254, 248, 0.035) 1px, transparent 1px);
+  background-size: 52px 52px;
+  animation: gridDrift 24s linear infinite;
+}
+
+@keyframes gridDrift {
+  from { transform: translate(0, 0); }
+  to   { transform: translate(52px, 52px); }
+}
+
+.Orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.OrbOne {
+  width: 480px; height: 480px;
+  background: rgba(35, 25, 79, 0.7);
+  top: -120px; left: -80px;
+  animation: orbDrift 18s ease-in-out infinite alternate;
+}
+
+.OrbTwo {
+  width: 360px; height: 360px;
+  background: rgba(35, 25, 79, 0.5);
+  bottom: -60px; right: -40px;
+  animation: orbDrift 22s ease-in-out infinite alternate-reverse;
+}
+
+.OrbThree {
+  width: 200px; height: 200px;
+  background: rgba(221, 254, 248, 0.04);
+  top: 30%; left: 50%;
+  transform: translate(-50%, -50%);
+  animation: orbPulse 6s ease-in-out infinite;
+}
+
+@keyframes orbDrift {
+  from { transform: translate(0, 0); }
+  to   { transform: translate(40px, 30px); }
+}
+
+@keyframes orbPulse {
+  0%, 100% { opacity: 0.4; transform: translate(-50%, -50%) scale(1); }
+  50%       { opacity: 0.9; transform: translate(-50%, -50%) scale(1.3); }
+}
+
+.Content {
+  position: relative;
+  z-index: 2;
+  max-width: 780px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+}
+
+.Eyebrow {
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--clr-dim);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  animation: fadeUp 0.7s 0.2s ease both;
+}
+
+.Eyebrow::before,
+.Eyebrow::after {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 1px;
+  background: var(--clr-border-mid);
+}
+
+.Title {
+  font-family: var(--font-display);
+  font-size: clamp(56px, 9vw, 92px);
+  font-weight: 800;
+  line-height: 0.93;
+  letter-spacing: -0.04em;
+  animation: fadeUp 0.7s 0.35s ease both;
+}
+
+.TitleAccent { color: var(--clr-accent); }
+.TitleMuted  { color: rgba(221, 254, 248, 0.22); }
+
+.Sub {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--clr-dim);
+  max-width: 460px;
+  line-height: 1.8;
+  animation: fadeUp 0.7s 0.5s ease both;
+}
+
+.CtaGroup {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+  animation: fadeUp 0.7s 0.65s ease both;
+}
+
+.ScrollHint {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--clr-dim);
+  animation: fadeUp 0.7s 1.1s ease both;
+  z-index: 2;
+}
+
+.ScrollLine {
+  width: 1px;
+  height: 28px;
+  background: linear-gradient(to bottom, var(--clr-border-mid), transparent);
+  animation: scrollDrop 2s ease-in-out infinite;
+}
+
+@keyframes scrollDrop {
+  0%, 100% { transform: scaleY(1);   opacity: 0.5; }
+  50%       { transform: scaleY(1.4); opacity: 1; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@media (max-width: 768px) {
+  .Hero { padding: 100px 24px 60px; }
+}

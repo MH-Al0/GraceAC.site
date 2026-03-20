@@ -1,0 +1,39 @@
+.Footer {
+  padding: 28px 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--clr-border);
+}
+
+.Copy {
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--clr-dim);
+}
+
+.FooterLinks {
+  display: flex;
+  gap: 20px;
+}
+
+.FooterLinks a {
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--clr-dim);
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+.FooterLinks a:hover {
+  color: var(--clr-accent);
+}
+
+@media (max-width: 768px) {
+  .Footer {
+    padding: 24px;
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+}

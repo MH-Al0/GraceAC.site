@@ -1,0 +1,106 @@
+.Main {
+  padding-top: 60px;
+  min-height: 100vh;
+}
+
+.Inner {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 80px 56px 96px;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+.Header {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.Eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--clr-dim);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.Eyebrow::after {
+  content: '';
+  width: 40px;
+  height: 1px;
+  background: var(--clr-border);
+}
+
+.Title {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.0;
+}
+
+.TitleAccent {
+  color: var(--clr-accent);
+}
+
+.Block {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-left: 24px;
+  border-left: 1px solid var(--clr-border);
+}
+
+.BlockTitle {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.BlockText {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--clr-dim);
+  line-height: 1.85;
+}
+
+.PillsBlock {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.Pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  font-weight: 400;
+  color: var(--clr-dim);
+  border: 1px solid var(--clr-border);
+  padding: 6px 14px;
+  letter-spacing: 0.06em;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.Pill:hover {
+  color: var(--clr-accent);
+  border-color: var(--clr-border-mid);
+}
+
+.PillPip {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--clr-accent);
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .Inner { padding: 48px 24px 64px; }
+}

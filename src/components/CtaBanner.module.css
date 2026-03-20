@@ -1,0 +1,55 @@
+.Banner {
+  background: var(--clr-surface);
+  border-top: 1px solid var(--clr-border);
+  border-bottom: 1px solid var(--clr-border);
+  padding: 80px 56px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.Glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 60% 100% at 50% 100%,
+    rgba(221, 254, 248, 0.04),
+    transparent
+  );
+  pointer-events: none;
+}
+
+.Title {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  position: relative;
+}
+
+.Sub {
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--clr-dim);
+  line-height: 1.75;
+  max-width: 400px;
+  position: relative;
+}
+
+.CtaGroup {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .Banner { padding: 64px 24px; }
+}

@@ -1,0 +1,57 @@
+.Stats {
+  background: var(--clr-surface);
+  border-top: 1px solid var(--clr-border);
+  border-bottom: 1px solid var(--clr-border);
+  padding: 24px 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.StatItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 0 40px;
+  border-right: 1px solid var(--clr-border);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.StatItem:last-child {
+  border-right: none;
+}
+
+.StatItem.visible {
+  opacity: 1;
+  transform: none;
+}
+
+.StatNum {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--clr-accent);
+  letter-spacing: -0.03em;
+}
+
+.StatLabel {
+  font-size: 10px;
+  font-weight: 400;
+  color: var(--clr-dim);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .Stats    { padding: 20px 16px; }
+  .StatItem {
+    padding: 12px 20px;
+    border-right: none;
+    border-bottom: 1px solid var(--clr-border);
+  }
+  .StatItem:last-child { border-bottom: none; }
+}
