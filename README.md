@@ -2,16 +2,7 @@
 
 Next.js 14 site for GraceAC, an open-source Minecraft anticheat.
 
-## Quick start
-
-```bash
-npm install
-npm run dev
-```
-
-Open http://localhost:3000.
-
-## Swapping in your links
+(reminder to self) 
 
 All external URLs live in one place:
 
@@ -19,10 +10,8 @@ All external URLs live in one place:
 src/config/links.ts
 ```
 
-Change the three values there and every button, nav link, and footer
-link across the entire site updates automatically.
-
 ## Wiring the contact form
+(reminder to self) 
 
 The contact form at /contact has a placeholder where the submission
 logic lives. Replace it with Formspree (free, no backend needed):
@@ -34,7 +23,7 @@ logic lives. Replace it with Formspree (free, no backend needed):
 ## Deploy to Vercel
 
 1. Push repo contents (not a subfolder) to GitHub
-2. Import at vercel.com/new
+2. Import at vercel.com
 3. Vercel auto-detects Next.js, click Deploy
 
 ## Project structure
