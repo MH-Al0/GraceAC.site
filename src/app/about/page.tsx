@@ -63,7 +63,7 @@ export default function AboutPage() {
           <section className={styles.PillsBlock}>
             {[
               'Velocity Proxy Plugin',
-              '11 Detection Checks',
+              'Complete and stable Detection Checks',
               'ML Ghost Sidecar',
               'Discord Webhook Alerts',
               'Punishment System',
